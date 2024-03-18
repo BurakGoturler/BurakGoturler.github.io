@@ -1,7 +1,155 @@
+<!-- HTML5 belgesi olduğunu belirtir. -->
 <!DOCTYPE html>
-<html>
+
+<!-- HTML dokümanının başlangıcını tanımlar ve dil ayarını belirtir. -->
+<html lang="en">
+
+    <!-- HTML dokümanının başlık bölümünü başlatır.-->
+<head>
+
+    <!-- Sekmede gözüken küçük resim. -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+
+    <!-- Karakter kodlamasını UTF-8 olarak ayarladım, bu etisket sayesinde farklı dillerdeki karakterlerin doğru şekilde görüntülenmesini sağladım. -->
+    <meta charset="UTF-8">
+
+    <!-- Cihazın ekran boyutuna göre otomatik ölçeklendirme yapılmasını sağlayan meta etiketi. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Web sayfasının başlığını belirler. -->
+    <title>Çamaşır Makinesi Rezervasyonu</title>
+
+    <!-- Harici bir CSS dosyasını (styles.css) bağladım. -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Bootstrap CSS kütüphanesinin bağlantı cümlesi. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+
+        /* navbar'ı sabitlemek için kullanmış olduğum css etiketleri. */
+        header { 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #333;
+            color: white; 
+        }
+
+        /* footer'ı sabitlemek için kullanmış olduğum css etiketleri */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+        }
+
+        /* overflow: hidden => Sayfadaki ana içeriğin taşma durumunda gizlenmesini sağlayarak, daha temiz ve düzenli bir görüntü elde edilmesine yardımcı olur. */
+        main {
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    
+    <header>
+        <!--  Sayfanın başlığını belirledim. -->
+        <h1>Çamaşır Makinesi Rezervasyonu</h1>
+
+        <!-- Yatay çizgi ekledim. -->
+        <hr>
+
+        <!-- Sayfanın navigasyon menüsünü tanımladım. -->
+        <nav>
+
+            <!--  Bir liste oluşturdum ve içine navigasyon öğelerini listeledim. -->
+            <ul>
+
+                <li><a href="index.html">Ana Sayfa</a></li> 
+                <li><a href="machines.html">Çamaşır Makineleri</a></li>
+                <li><a href="register.html">Kayıt Ol</a></li>
+                <li><a href="login.html">Giriş Yap</a></li>
+
+                <!-- Bootstrap ile bir "Çıkış Yap" butonunu oluşturdum. Kullanıcı bu butona tıkladığında oturumu kapatır ve çıkış yapar. -->
+                <button class="btn btn-outline-success" type="button" id="signoutbutton">Çıkış Yap</button>
+
+            </ul>
+
+            <hr>
+            
+        </nav>
+
+    </header>
+
+    <!-- Sayfanın ana içeriğini belirten bir HTML etiketi. -->
+    <main>
+        <!-- Boş bir başlık etiketi oluşturdum. id özelliğini "greet" olarak belirlediğim bu etikete, JavaScript tarafında bir mesajın dinamik olarak bu etikete yazmasını sağladım. -->
+        <h2 id="greet"></h2>
+    </main>
+
+    <!-- Sayfanın footer alanı. -->
+    <footer>
+        <p>&copy; 2024 Çamaşır Makinesi Rezervasyonu</p>
+    </footer>
+
+    <!-- Bootstrap kütüphanesinin JavaScript bağlantı cümlesi. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <!-- Burada kullanıcı kimlik bilgilerinin yönetimi, kullanıcıyı karşılama ve oturumu sonlandırma işlemleri yer alıyor. -->
+    <script>
+        // Kullanıcı kimlik bilgilerini oturum depolama alanından alıp ve "UserCreds" ve "UserInfo" değişkenine atıyoruz.
+        let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+        
+        // Kullanıcı oturum bilgilerini al
+        let userCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+
+        // Kayıt ol ve giriş yap butonlarının bulunduğu listeyi seç
+        let navButtons = document.querySelectorAll('nav ul li:nth-child(3), nav ul li:nth-child(4)');
+
+        // Eğer kullanıcı giriş yapmışsa (session bilgisi varsa), kayıt ol ve giriş yap butonlarını gizle
+        if (userCreds) {
+                navButtons.forEach(button => {
+                button.style.display = "none";
+            });
+        }
+
+        // HTML içindeki "greet" id'li bir öğeyi seçerek ve "GreetHead" değişkenine atadım. Bu öğe ile kullanıcıyı karşılama cümlesini kullanıyoruz.
+        let GreetHead = document.getElementById('greet');
+
+        // HTML içindeki "signoutbutton" id'li bir öğeyi seçerek ve "SignoutBtn" değişkenine atadım. Bu öğe ile de çıkış yapma işlemini gerçekleştirdim.
+        let SignoutBtn = document.getElementById('signoutbutton');
+
+        // Bir Çıkış fonksiyonunu tanımladım. Bu fonksiyonun işlevi, kullanıcı oturumunu sonlandırır ve kullanıcı kimlik bilgilerini oturum depolama alanından kaldırır. Daha sonra kullanıcıyı giriş sayfasına yönlendirir.
+        let Signout = () => {
+            
+            sessionStorage.removeItem("user-creds");
+            sessionStorage.removeItem("user-info");
+
+            window.location.href = 'login.html'
+        }
+
+        // Kullanıcı kimlik bilgilerini kontrol eden bir fonksiyonu tanımladım. Bu fonksiyon ile eğer kullanıcı kimlik bilgileri oturum depolama alanında yoksa, kullanıcıyı giriş sayfasına yönlendiriyorum. Eğer kullanıcı kayıtlı ise yani bilgileri mevcut ise siteye girdirir ve kullanıcı adını ve soyadını içeren bir hoş geldin mesajını görüntüler.
+        let CheckCred = () => {
+
+            if (!sessionStorage.getItem("user-creds"))
+            window.location.href = 'login.html'
+
+            else {
+                GreetHead.innerText = `Hoş Geldin ${UserInfo.firstname + " " + UserInfo.lastname}!`;
+            }
+        }
+
+        //  Sayfa yüklendiğinde, CheckCred fonksiyonunu çağırarak kullanıcı kimlik bilgilerini kontrol eder.
+        window.addEventListener('load', CheckCred);
+
+        // Çıkış butonuna tıklama olayını dinler ve Signout fonksiyonunu çağırarak kullanıcıyı oturumdan çıkarır.
+        SignoutBtn.addEventListener('click', Signout);
+
+    </script>
+
 </body>
 </html>
