@@ -92,12 +92,12 @@
             </div>
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="tcno" maxlength="11">
+              <input required type="text" class="form-control" id="tcno" maxlength="11">
               <label for="tcno">TC Kimlik Numarası</label>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="emailInp">
+              <input required type="email" class="form-control" id="emailInp">
               <label for="emailInp">Email</label>
             </div>
             
@@ -175,6 +175,7 @@
             firstname: FnameInp.value,
             lastname: LnameInp.value
           })
+          alert("Kayıt başarıyla tamamlandı!");
         })
         .catch((error)=>{
           alert(error.message);

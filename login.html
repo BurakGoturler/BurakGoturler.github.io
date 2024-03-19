@@ -121,8 +121,14 @@
 
             <!-- Email giriş alanı -->
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="emailInp">
-              <label for="floatingInput">Email</label>
+              <input required type="email" class="form-control" id="emailInp">
+              <label for="emailInp">Email</label>
+            </div>
+
+            <!-- tc giriş alanı | firebase tarafında giriş kısmını eposta ve şfire seçtiğimiz için tc no ile giriş yaptıramıyoruz... -->
+            <div class="form-floating mb-3">
+              <input required type="text" class="form-control" id="tcno" maxlength="11">
+              <label for="tcno">TC Kimlik Numarası</label>
             </div>
 
              <!-- Şifre giriş alanı -->
