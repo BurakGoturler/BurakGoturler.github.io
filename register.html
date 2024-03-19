@@ -24,6 +24,26 @@
         background-color: #45a049;
         border-color: #45a049;
       }
+
+      #MainForm{
+        background-color: #c5e2f7;
+        position: absolute;
+        right: 150px;
+        top: 60px;
+      }
+      
+      .container form{
+        height: 640px;
+        width: 30vw;
+      }
+
+      body{
+        background-image: url("img/arkaplan2.jpg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-attachment:fixed;
+        background-size:cover;
+      }
     </style>
   </head>
   <body>
@@ -38,22 +58,27 @@
               <input type="text" class="form-control" id="fnameInp">
               <label for="fnameInp">İsim</label>
             </div>
+            
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="lnameInp">
               <label for="lnameInp">Soyisim</label>
             </div>
+
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="tcno" maxlength="11">
               <label for="tcno">TC Kimlik Numarası</label>
             </div>
+
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="emailInp">
               <label for="emailInp">Email</label>
             </div>
+            
             <div class="form-floating mb-3">
               <input type="password" class="form-control" id="passwordInp">
               <label for="passwordInp">Şifre</label>
             </div>
+
             <div class="form-floating mb-3">
               <input type="number" class="form-control" id="roomnumber">
               <label for="roomnumber">Oda Numarası</label>

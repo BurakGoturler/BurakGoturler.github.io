@@ -27,6 +27,7 @@
       /* Sayfanın arka plan rengini ayarladım. */
       body {
         background-color: #f8f9fa;
+        background: "C:\Users\Burak\Desktop\Proje\img\arkaplan.jpg";
       }
 
       /* "MainForm" id'sine dahip form elemanının arka plan rengisi, kenarlığını, iç boşluğunu ve gölgelendirmeleini ayarladım. */
@@ -47,6 +48,87 @@
       .btn-primary:hover {
         background-color: #45a049;
         border-color: #45a049;
+      }
+
+      #MainForm{
+        background-color: #12534d;
+        position: absolute;
+        right: 150px;
+        top: 120px;
+      }
+
+      body{
+        background-image: url("img/arkaplan2.jpg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-attachment:fixed;
+        background-size:cover;
+      }
+
+      .container form{
+        height: 360px;
+        width: 30vw;
+      }
+
+      footer{
+        position:relative;
+        top: 541px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #111;
+        height: auto;
+        width: 100vw;
+        font-family: "Open Sans";
+        color: #fff;
+      }
+
+      .footer-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-content h3{
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+      }
+
+      .footer-content p{
+        max-width: 1500px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+      }
+
+      .socials {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 3rem 0;
+      }
+
+      .socials li {
+        margin: 0 10px;
+      }
+
+      .socials a{
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .socials a i{
+        font-size: 1.1rem;
+        transition: color .4s ease;
+      }
+
+      .socials a:hover i{
+        color: aqua;
       }
 
     </style>
@@ -88,11 +170,24 @@
               <a href="register.html" class="btn btn-secondary">Kayıt Ol</a>
             </div>
 
+            <div class="footer-content">
+              <ul class="socials">
+                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                <li><a href=""><i class="fa fa-linkedin-square"></i></a></li>
+              </ul>
+            </div>
+
+
           </form>
 
         </div>
       </div>
     </div>
+
+    <script src="https://kit.fontawesome.com/24fb7699d2.js" crossorigin="anonymous"></script>
   
     <!-- Bootstrap kütüphanesinin JavaScript bağlantı cümlesi. -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
