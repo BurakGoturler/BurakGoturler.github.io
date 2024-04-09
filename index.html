@@ -11,6 +11,7 @@
         <h1>Ref'in Minik Tatlı Soruları</h1>
     </header>
     <main>
+
         <div id="questionDisplay"></div>
         <br>
         <button id="questionButton">
@@ -29,12 +30,15 @@
             <i class="fab fa-whatsapp"></i> WhatsApp'ta Paylaş!
         </button>
 
-        <audio src="sesler/ses.mp3" controls></audio>
 
         <br>
         <br>
 
         <div id="catGifs"></div>
+        <audio id="audioPlayer" controls>
+            <source src="sesler/ses.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     </main>
 
     <script src="script.js"></script>

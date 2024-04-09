@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #FFCDEA;
     margin: 0;
     padding: 0;
 }
@@ -43,7 +43,7 @@ button:hover {
     color: #333;
     padding: 20px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #F8F6E3;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.5s ease;
 }
@@ -100,3 +100,59 @@ button:hover {
     background-color: #F7C566;
 }
 
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 10px 0;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    button {
+        padding: 8px 16px;
+    }
+}
+
+/* Audio çaları yeniden stilendir */
+#audioPlayer {
+    width: 100%;
+    max-width: 300px; /* Maksimum genişlik ayarlayın */
+    margin: 0 auto;
+    display: block;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ses kontrol düğmelerinin rengini değiştir */
+#audioPlayer::-webkit-media-controls-play-button,
+#audioPlayer::-webkit-media-controls-pause-button {
+    color: #007bff;
+}
+
+/* Ses kontrol çubuğunu özelleştir */
+#audioPlayer::-webkit-media-controls-current-time-display,
+#audioPlayer::-webkit-media-controls-time-remaining-display,
+#audioPlayer::-webkit-media-controls-timeline {
+    color: #007bff;
+}
+
+/* Ses kontrol çubuğunun arka planını özelleştir */
+#audioPlayer::-webkit-media-controls-timeline {
+    background-color: #ddd;
+}
+
+/* Ses kontrol çubuğunun kaydırma işaretçisinin rengini değiştir */
+#audioPlayer::-webkit-media-controls-seek-back-button,
+#audioPlayer::-webkit-media-controls-seek-forward-button {
+    color: #007bff;
+}

@@ -1,13 +1,13 @@
 const questions = [
-    "askim benim için leylek kostümü giyip sokakta gezer miydin?",
-    "askim solucan olsam beni sever miydin?",
-    "askim ilkokulda sınıf başkanlığı için oyunu bana verir miydin",
+    "askim benim için leylek kostümü giyip sokakta gezer miydin???",
+    "askim solucan olsam beni sever miydin?????",
+    "askim ilkokulda sınıf başkanlığı için oyunu bana verir miydin???",
     "askim ağzımdan çıkardığım sakızı çiğner miydin?",
-    "askim hamam böceği olsam beni eline alıp sever miydin?",
-    "askim her gün solan bir çiçek olsam beni koklamak için hergün yeni ben çiçeği alır mıydın?",
+    "askim hamam böceği olsam beni eline alıp sever miydin??",
+    "askim her gün solan bir çiçek olsam beni koklamak için hergün yeni ben çiçeği alır mıydın?????",
     "askim bir dondurma olsam beni yalarken dilin donar mıydı?",
-    "askim bir hamburger olsam seni doyurabilir miydim yoksa sadece mideni mi bulandırırdım?",
-    "askim evde kalmak yerine yağmurlu bir günde ben istiyorum diye benimle dışarıda çamurlara batıp eğlenir miydin?",
+    "askim bir hamburger olsam seni doyurabilir miydim yoksa sadece mideni mi bulandırırdım???",
+    "askim evde kalmak yerine yağmurlu bir günde ben istiyorum diye benimle dışarıda çamurlara batıp eğlenir miydin??",
 ];
 
 document.getElementById("questionButton").addEventListener("click", displayRandomQuestion);
