@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ref'in Minik Tatlı Soruları</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ref'in Minik Tatlı Soruları</h1>
+    </header>
+    <main>
+        <div id="questionDisplay"></div>
+        <br>
+        <button id="questionButton">
+            <i class="fa-solid fa-heart"></i> Tatlı Soru Üret!</button>
+        <div id="notification"></div>
+        <!-- Twitter paylaşma butonu ve ikonu -->
+        <br>
+        <br>
+
+        <button id="shareButton">
+            <i class="fab fa-twitter"></i> Twitter'da Paylaş!
+        </button>
+        
+        <!-- WhatsApp paylaşma butonu ve ikonu -->
+        <button id="shareButton2">
+            <i class="fab fa-whatsapp"></i> WhatsApp'ta Paylaş!
+        </button>
+
+        <audio src="sesler/ses.mp3" controls></audio>
+
+        <br>
+        <br>
+
+        <div id="catGifs"></div>
+    </main>
+
+    <script src="script.js"></script>
+    
+    <script src="https://kit.fontawesome.com/24fb7699d2.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Kedi gifleri için gerekli API'ye istek gönderen fonksiyon
+        async function fetchCatGifs() {
+            try {
+                const response = await axios.get('https://api.thecatapi.com/v1/images/search?mime_types=gif', {
+                    headers: {
+                        'x-api-key': "live_Mb0vHghUxChA7TDgV8zzwzUwuXhj5bZO2WoVpHiFviavZP698RWcKsK7CUqC07sk"
+                    },
+                });
+                const catGifs = response.data;
+                displayCatGifs(catGifs);
+            } catch (error) {
+                console.error('Kedi gifleri alınırken bir hata oluştu:', error);
+            }
+        }
+
+        // Alınan kedi giflerini sayfaya ekleyen fonksiyon
+        function displayCatGifs(catGifs) {
+            const catGifsContainer = document.getElementById('catGifs');
+            catGifs.forEach(catGif => {
+                const img = document.createElement('img');
+                img.src = catGif.url;
+                img.alt = 'Komik Kedi Gifi';
+                catGifsContainer.appendChild(img);
+            });
+        }
+
+        // Sayfa yüklendiğinde kedi giflerini al
+        window.onload = fetchCatGifs;
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+
+</body>
+</html>
