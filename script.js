@@ -4,7 +4,7 @@ const questions = [
     "askim ilkokulda sınıf başkanlığı için oyunu bana verir miydin???",
     "askim ağzımdan çıkardığım sakızı çiğner miydin?",
     "askim hamam böceği olsam beni eline alıp sever miydin??",
-    "askim her gün solan bir çiçek olsam beni koklamak için hergün yeni ben çiçeği alır mıydın?????",
+    "askim eğer ben her gün solan bir çiçek olsam beni koklamak için hergün yeniden alır mıydın?????",
     "askim bir dondurma olsam beni yalarken dilin donar mıydı?",
     "askim bir hamburger olsam seni doyurabilir miydim yoksa sadece mideni mi bulandırırdım???",
     "askim evde kalmak yerine yağmurlu bir günde ben istiyorum diye benimle dışarıda çamurlara batıp eğlenir miydin??",
