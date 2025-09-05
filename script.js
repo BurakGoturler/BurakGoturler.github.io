@@ -260,7 +260,7 @@ class CatHeartGame {
         
         const heart = document.createElement('div');
         heart.className = 'heart-item';
-        heart.innerHTML = ['💖', '💗','💞', '💝', '💘', '❤️', '🩷'][Math.floor(Math.random() * 8)];
+        heart.innerHTML = ['💖', '💗','💞', '💝', '💘', '❤️'][Math.floor(Math.random() * 8)];
         
         const x = Math.random() * (this.gameArea.offsetWidth - 40);
         const y = Math.random() * (this.gameArea.offsetHeight - 40);
@@ -343,3 +343,4 @@ document.addEventListener('DOMContentLoaded', () => {
     new CatHeartGame();
 
 });
+
