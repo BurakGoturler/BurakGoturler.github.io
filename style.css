@@ -1,0 +1,515 @@
+/* Spotify section taşmasını önle */
+.music-section {
+    max-width: 100vw;
+    overflow-x: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+/* Kedi Galerisi */
+.cat-gallery-section {
+    margin-bottom: 40px;
+}
+.cat-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 32px;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 10px 0 0 0;
+}
+.cat-gallery-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/3;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 18px #e7548033;
+    border: 3px solid #ffe3ec;
+    transition: transform 0.22s, box-shadow 0.22s, border 0.22s;
+    background: #fff0f6;
+    margin: 0 auto;
+}
+.cat-gallery-img:hover {
+    transform: scale(1.09) rotate(-2deg);
+    box-shadow: 0 8px 32px #e7548099;
+    border: 3px solid #e75480;
+}
+
+/* Spotify embed alanı */
+.spotify-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 100%;
+    margin: 0 auto 32px auto;
+    align-items: stretch;
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.spotify-item {
+    background: linear-gradient(135deg, #ffe3ec 60%, #f9c6d1 100%);
+    border-radius: 28px;
+    box-shadow: 0 8px 32px #e7548033, 0 1.5px 8px #fff6fa;
+    padding: 22px 10px 18px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transition: box-shadow 0.22s, transform 0.18s, border 0.18s;
+    border: 2.5px solid #fbb1b1;
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.spotify-item:hover {
+    box-shadow: 0 16px 48px #e75480aa, 0 2px 12px #fff6fa;
+    transform: translateY(-6px) scale(1.03);
+    border: 2.5px solid #e75480;
+}
+.spotify-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: flex-start;
+}
+.spotify-card-icon {
+    font-size: 1.5em;
+    color: #e75480;
+    filter: drop-shadow(0 2px 6px #e7548033);
+}
+.spotify-card-title {
+    font-family: 'Pacifico', cursive, 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    color: #a14a76;
+    letter-spacing: 0.5px;
+}
+.spotify-item iframe {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    border-radius: 16px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 2px 8px #e7548033;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.spotify-hint {
+    text-align: center;
+    color: #a14a76;
+    font-size: 1em;
+    margin-top: 12px;
+    opacity: 0.7;
+    grid-column: 1 / -1;
+}
+/* Uçuşan kalpler arka planı */
+.hearts-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -10;
+    overflow: hidden;
+}
+.heart-anim {
+    position: absolute;
+    font-size: 1.4em;
+    color: #e75480;
+    opacity: 0.88;
+    animation: float-hearts 6s linear infinite;
+    will-change: transform, opacity;
+    user-select: none;
+    filter: drop-shadow(0 2px 8px #e7548055);
+    text-shadow: 0 2px 8px #fff6fa, 0 0 2px #e75480;
+}
+@keyframes float-hearts {
+    0% {
+        transform: translateY(100vh) scale(0.7) rotate(-10deg);
+        opacity: 0.7;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.1) rotate(10deg);
+        opacity: 0;
+    }
+}
+@media (max-width: 768px) {
+    .heart-anim {
+        font-size: 1em;
+    }
+}
+body {
+    font-family: 'Montserrat', 'Pacifico', cursive, sans-serif;
+    background: linear-gradient(135deg, #ffe3ec 0%, #f9c6d1 100%);
+    color: #4d194d;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+}
+/* Ana içeriklerin kalplerin önünde olmasını sağla */
+.main-header, main, .main-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.main-header {
+    padding: 60px 20px 40px 20px;
+    background: linear-gradient(135deg, #ffe3ec 60%, #f9c6d1 100%);
+    border-bottom: 2px solid #fbb1b1;
+    box-shadow: 0 4px 16px 0 #fbb1b155;
+}
+
+.main-header h1 {
+    font-size: 2.5em;
+    color: #e75480;
+    font-family: 'Pacifico', cursive, 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+.main-header .heart {
+    font-size: 1.2em;
+    color: #ff69b4;
+    vertical-align: middle;
+}
+
+.main-header p {
+    font-size: 1.1em;
+    color: #a14a76;
+    margin-top: 10px;
+}
+
+main {
+    padding: 32px 8px 24px 8px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 32px 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 22px;
+    box-shadow: 0 6px 24px 0 #fbb1b133;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fancy-title {
+    color: #e75480;
+    font-family: 'Pacifico', cursive, 'Montserrat', sans-serif;
+    font-size: 2em;
+    margin-bottom: 18px;
+}
+
+.cat-image {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 18px;
+    margin-top: 18px;
+    border: 3px solid #e75480;
+    box-shadow: 0 2px 12px #e7548033;
+}
+
+.section-title {
+    color: #a14a76;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 18px;
+}
+
+.song-item {
+    margin: 18px auto;
+    max-width: 400px;
+    background: #ffe3ec;
+    padding: 14px 10px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px #e7548033;
+    border: 1.5px solid #fbb1b1;
+}
+
+.song-item audio {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff0f6;
+}
+
+.message-box {
+    text-align: left;
+    max-width: 420px;
+    margin: auto;
+    line-height: 1.7;
+    background: #fff0f6;
+    border-radius: 12px;
+    padding: 18px 16px;
+    color: #a14a76;
+    font-size: 1.08em;
+    box-shadow: 0 2px 8px #e7548033;
+}
+.emoji {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+.main-footer {
+    padding: 18px 10px;
+    background: linear-gradient(90deg, #ffe3ec 60%, #f9c6d1 100%);
+    border-top: 2px solid #fbb1b1;
+    font-size: 1em;
+    color: #a14a76;
+    box-shadow: 0 -2px 12px #fbb1b155;
+}
+.footer-heart {
+    color: #e75480;
+    font-family: 'Pacifico', cursive, 'Montserrat', sans-serif;
+}
+
+/* Oyun Bölümü */
+.game-section {
+    margin-bottom: 40px;
+}
+
+.game-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ffe3ec 60%, #f9c6d1 100%);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px #e7548033;
+    border: 2px solid #fbb1b1;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.score-display, .time-display {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 15px;
+    border-radius: 15px;
+    border: 2px solid #e75480;
+    color: #a14a76;
+    font-weight: bold;
+}
+
+.score-label, .time-label {
+    margin-right: 5px;
+}
+
+.game-area {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #fff0f6 0%, #ffe3ec 100%);
+    border-radius: 15px;
+    border: 3px solid #e75480;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: inset 0 2px 8px #e7548033;
+}
+
+.cat-player {
+    position: absolute;
+    font-size: 2.5em;
+    transition: all 0.1s ease;
+    z-index: 10;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.heart-item {
+    position: absolute;
+    font-size: 1.8em;
+    animation: heartFloat 2s ease-in-out infinite;
+    z-index: 5;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+@keyframes heartFloat {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-5px) scale(1.1); }
+}
+
+.game-controls {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.start-btn, .restart-btn {
+    background: linear-gradient(135deg, #e75480 0%, #ff69b4 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px #e7548055;
+}
+
+.start-btn:hover, .restart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px #e7548088;
+    background: linear-gradient(135deg, #ff69b4 0%, #e75480 100%);
+}
+
+.game-instructions {
+    text-align: center;
+    color: #a14a76;
+    font-size: 0.9em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.desktop-controls {
+    display: block;
+}
+
+.mobile-controls {
+    display: none;
+}
+
+.mobile-controls-container {
+    display: none;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #e75480 0%, #ff69b4 100%);
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px #e7548055;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px #e7548088;
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px #e7548088;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid #e75480;
+    box-shadow: 0 8px 32px #e7548066;
+    z-index: 20;
+}
+
+.game-over h3 {
+    color: #e75480;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 10px;
+}
+
+.game-over p {
+    color: #a14a76;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px;
+}
+
+/* Küçük ekranlar için mobil uyumluluk */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 1.4em;
+    }
+    .fancy-title {
+        font-size: 1.2em;
+    }
+    section {
+        padding: 12px 2vw;
+        margin-bottom: 24px;
+    }
+    .cat-image {
+        max-width: 90vw;
+    }
+    .song-item {
+        max-width: 95vw;
+        padding: 10px 2vw;
+    }
+    .message-box {
+        max-width: 95vw;
+        padding: 10px 2vw;
+    }
+    .game-container {
+        margin: 0 10px;
+        padding: 15px;
+    }
+    .game-area {
+        height: 250px;
+    }
+    .cat-player {
+        font-size: 2em;
+    }
+    .heart-item {
+        font-size: 1.5em;
+    }
+    .desktop-controls {
+        display: none;
+    }
+    .mobile-controls {
+        display: block;
+    }
+    .mobile-controls-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .control-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 2em;
+        margin: 5px;
+    }
+}
