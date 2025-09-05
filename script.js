@@ -341,4 +341,5 @@ class CatHeartGame {
 // Oyunu başlat
 document.addEventListener('DOMContentLoaded', () => {
     new CatHeartGame();
+
 });
