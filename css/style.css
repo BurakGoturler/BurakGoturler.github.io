@@ -1,0 +1,671 @@
+/* Mobilde fiyat kartları */
+.price-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+.price-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,64,133,0.08);
+    padding: 1.1rem 1.2rem 1.1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+.price-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #004085;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.container .text-white {
+    margin-left: 1.8em;
+}
+
+.price-card-desc {
+    font-size: 1rem;
+    color: #333;
+}
+.price-card-price .badge {
+    font-size: 1.1em;
+    padding: 0.5em 1.2em;
+    border-radius: 1.5em;
+    font-weight: 600;
+}
+@media (min-width: 576px) {
+    .price-cards { display: none !important; }
+}
+
+        /* Reveal Animasyonları */
+        .reveal-fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .reveal-fade.active {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Kurumsal sayfa görsel ve başlık düzeni */
+        @media (max-width: 991.98px) {
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .navbar-brand {
+                max-width: 60vw;
+                font-size: 1.1rem !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .navbar-brand {
+                max-width: 140vw;
+                font-size: 0.95rem !important;
+            }
+        }
+
+/* Yorum Kartları (Testimonials) Kurumsal ve Modern Stil */
+.testimonial-card {
+    background: linear-gradient(120deg, #f8fafc 70%, #e9f1fb 100%);
+    border: 1.5px solid #e3eaf5;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,64,133,0.07);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.testimonial-card:hover {
+    box-shadow: 0 8px 32px rgba(0,64,133,0.13);
+    transform: translateY(-4px) scale(1.015);
+}
+.testimonial-card .fa-quote-left {
+    color: #007bff !important;
+    opacity: 0.8;
+}
+.testimonial-card .fst-italic {
+    color: #003366;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+.testimonial-card strong {
+    color: #004085;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.testimonial-card .text-warning {
+    margin-top: 0.2rem;
+}
+@media (max-width: 575.98px) {
+    .testimonial-card {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+        min-height: 260px;
+    }
+}
+/* Modern ve siteye uygun scrollbar tasarımı */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #e9ecef;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 10px;
+    background: #e9ecef;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #007bff 60%, #004085 100%);
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #0056b3 60%, #003366 100%);
+}
+/* Navbar Brand Responsive Düzenleme */
+@media (max-width: 575.98px) {
+    .navbar-brand {
+        max-width: 60vw;
+        font-size: 1.1rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+@media (max-width: 400px) {
+    .navbar-brand {
+        max-width: 45vw;
+        font-size: 0.95rem !important;
+    }
+}
+/* Carousel Modernleştirme */
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .8s;
+    transition-timing-function: ease-in-out;
+}
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+    opacity: 1;
+    z-index: 1;
+}
+.carousel-indicators [data-bs-target] {
+    background-color: #007bff;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+}
+.carousel-caption {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* Footer Modernleştirme */
+.footer {
+    background: linear-gradient(90deg, #001f3f 60%, #004085 100%);
+    color: #e9ecef;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    box-shadow: 0 -2px 24px rgba(0,64,133,0.08);
+}
+.footer h6 {
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+.footer-links a {
+    color: #e9ecef;
+    text-decoration: none !important;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+}
+.footer-links a:hover {
+    color: #00d4ff;
+}
+.footer .social-icon {
+    background: #003366;
+    color: #fff;
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
+    margin-right: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.footer .social-icon:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+/* Tüm Linklerin Altı Çizili Olmasın */
+a, a:visited, a:active, a:focus {
+    text-decoration: none !important;
+}
+/* Modern Fiyat Tablosu */
+.modern-table {
+    margin-top: 2rem;
+}
+.price-table {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,64,133,0.08);
+    overflow: hidden;
+}
+.price-table thead tr {
+    background: linear-gradient(90deg, #007bff 0%, #004085 100%);
+}
+.price-table thead th {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    padding: 1.1rem 0.7rem;
+    letter-spacing: 0.5px;
+}
+.price-table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.2s;
+}
+.price-table tbody tr:hover {
+    background: #f1f7fe;
+}
+.price-table td {
+    font-size: 1.1rem;
+    padding: 1rem 0.7rem;
+    vertical-align: middle;
+    border: none;
+}
+.price-table i.fa-solid {
+    color: #007bff;
+    margin-right: 0.5em;
+    font-size: 1.2em;
+}
+.price-table .badge {
+    font-size: 1.1em;
+    padding: 0.5em 1.2em;
+    border-radius: 1.5em;
+    font-weight: 600;
+}
+
+/* Fiyat Tablosu Mobil Responsive */
+@media (max-width: 575.98px) {
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .price-table {
+        min-width: 480px;
+        font-size: 0.95rem;
+    }
+    .price-table thead th, .price-table td {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+}
+/* Önce/Sonra Slider */
+.before-after-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    background: #222;
+}
+.before-after-slider .before-img,
+.before-after-slider .after-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: none;
+    pointer-events: none;
+}
+.before-after-slider .after-img {
+    clip-path: inset(0 0 0 50%);
+    z-index: 2;
+}
+.before-after-slider .before-img {
+    z-index: 1;
+}
+.before-after-slider .slider-range {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 10px;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 3;
+    appearance: none;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    outline: none;
+    opacity: 0.85;
+}
+.before-after-slider .slider-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #007bff;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+.before-after-slider .slider-range::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #007bff;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+.before-after-slider .slider-range::-ms-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #007bff;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+.before-after-slider .before-label,
+.before-after-slider .after-label {
+    position: absolute;
+    top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+    padding: 0.2em 0.7em;
+    border-radius: 6px;
+    z-index: 4;
+}
+.before-after-slider .before-label {
+    left: 10px;
+}
+.before-after-slider .after-label {
+    right: 10px;
+}
+/* Genel Stil */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #004085;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #007bff;
+}
+
+/* Header & Navbar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.navbar.fixed-top {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #004085 !important;
+}
+.nav-link {
+    font-weight: 500;
+    color: #004085 !important;
+    margin: 0 10px;
+}
+.nav-link:hover {
+    color: #007bff !important;
+}
+
+/* Hero Slider */
+.hero-slider .carousel-item {
+    height: 100vh;
+    min-height: 500px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+/* Hero Slider Caption Responsive Düzenleme */
+.hero-slider .carousel-caption {
+    background-color: rgba(0, 64, 133, 0.6);
+    padding: 2.5rem 2.5rem 2.5rem 3.5rem;
+    border-radius: 12px;
+    max-width: 700px;
+    left: 0;
+    right: auto;
+    margin-left: 2.5vw;
+    margin-right: auto;
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hero-slider h1 {
+        font-size: 3.2rem;
+        font-weight: bold;
+        color: white;
+}
+.hero-slider p {
+        font-size: 1.2rem;
+        color: #e9ecef;
+}
+@media (max-width: 768px) {
+    .hero-slider .container {
+        padding-top: 1.2rem !important;
+        padding-bottom: 1.2rem !important;
+        max-width: 95vw;
+    }
+    .hero-slider .carousel-caption {
+        padding: 0.7rem 0.5rem 0.7rem 0.9rem;
+        max-width: 90vw;
+        max-height: 240px;
+        left: 0;
+        right: 0;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        transform: none;
+        top: 60%;
+        text-align: center;
+    }
+    .hero-slider h1 {
+        font-size: 1.7rem;
+        line-height: 1.2;
+    }
+    .hero-slider p {
+        font-size: 0.95rem;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+        display: block !important;
+    }
+    .hero-slider .btn {
+        font-size: 0.95rem;
+        padding: 0.5rem 1.1rem;
+    }
+}
+
+/* Hizmet Kutuları */
+.service-box {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+.service-box:hover {
+    transform: translateY(-10px);
+}
+.service-box .fa-solid {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+/* Doktor Kartları */
+.doctor-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+.doctor-card:hover {
+    transform: translateY(-10px);
+}
+.doctor-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.doctor-card-body {
+    padding: 2rem;
+    text-align: center;
+}
+.doctor-card-body h5 {
+    color: #004085;
+}
+
+/* Galeri */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+.before-after-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* FAQ */
+.accordion-item {
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.accordion-button {
+    background-color: #fff;
+    color: #004085;
+    font-weight: bold;
+}
+.accordion-body {
+    background-color: #f1f7fe;
+    color: #555;
+}
+
+/* WhatsApp Butonu */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Footer */
+.footer {
+    background-color: #001f3f;
+    color: #e9ecef;
+}
+.footer h5 {
+    color: #fff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.footer a {
+    color: #e9ecef;
+    transition: color 0.3s;
+}
+.footer a:hover {
+    color: #007bff;
+}
+.social-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #e9ecef;
+}
+.social-icon:hover {
+    color: #007bff;
+}
+
+/* Top Bar Styles */
+.header-container.fixed-top {
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.top-bar {
+  background-color: #004085;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.top-bar a {
+  transition: opacity 0.3s;
+}
+
+.top-bar a:hover {
+  opacity: 0.8;
+}
+
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+body {
+    padding-top: 125px; /* Adjust this value based on the combined height of top-bar and navbar */
+}
+
+
+@media (max-width: 576px) {
+  .header-container.fixed-top .navbar {
+    top: 0;
+  }
+}
