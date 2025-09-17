@@ -375,10 +375,18 @@ a, a:visited, a:active, a:focus {
     right: 10px;
 }
 /* Genel Stil */
+html, body {
+    height: 100%;
+}
 body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
     background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
@@ -435,7 +443,7 @@ p {
 
 /* Hero Slider */
 .hero-slider .carousel-item {
-    height: 100vh;
+    height: 83vh;
     min-height: 500px;
     background-position: center;
     background-size: cover;
@@ -450,7 +458,7 @@ p {
     padding: 2.5rem 2.5rem 2.5rem 3.5rem;
     border-radius: 12px;
     max-width: 700px;
-    left: 0;
+    left: 102px;
     right: auto;
     margin-left: 2.5vw;
     margin-right: auto;
@@ -468,22 +476,28 @@ p {
         font-size: 1.2rem;
         color: #e9ecef;
 }
+
+.carousel-caption a {
+    margin-top: 30px !important;
+}
+
+
 @media (max-width: 768px) {
     .hero-slider .container {
-        padding-top: 1.2rem !important;
-        padding-bottom: 1.2rem !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
         max-width: 95vw;
     }
     .hero-slider .carousel-caption {
         padding: 0.7rem 0.5rem 0.7rem 0.9rem;
         max-width: 90vw;
-        max-height: 240px;
+        max-height: 250px;
         left: 0;
         right: 0;
         margin-left: 5vw;
         margin-right: 5vw;
         transform: none;
-        top: 60%;
+        top: 56%;   
         text-align: center;
     }
     .hero-slider h1 {
@@ -500,6 +514,34 @@ p {
         font-size: 0.95rem;
         padding: 0.5rem 1.1rem;
     }
+}
+@media (max-width: 576px) {
+  .hero-slider .carousel-item {
+    height: 90vh !important;
+    min-height: 400px !important;
+    max-height: 100vh !important;
+  }
+  .hero-slider .carousel-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+  }
+  .hero-slider .carousel-caption a {
+    width: 80%;
+    max-width: 320px;
+    margin: 0 auto !important;
+    display: block;
+    font-size: 0.95rem;
+    padding: 0.45rem 0.7rem;
+    height: 35px;
+    line-height: 1.2;
+  }
+  .hero-slider .carousel-caption .btn + .btn {
+    margin-left: 1 !important;
+    margin-top: 0.5rem;
+  }
 }
 
 /* Hizmet Kutuları */
@@ -663,9 +705,22 @@ body {
     padding-top: 125px; /* Adjust this value based on the combined height of top-bar and navbar */
 }
 
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 115px;
+    }
+}
 
 @media (max-width: 576px) {
   .header-container.fixed-top .navbar {
     top: 0;
   }
+  body {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 991.98px) {
+    .header-container {
+        padding-bottom: 90px;
+    }
 }
