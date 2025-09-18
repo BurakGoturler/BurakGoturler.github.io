@@ -517,9 +517,9 @@ p {
 }
 @media (max-width: 576px) {
   .hero-slider .carousel-item {
-    height: 76vh !important;
-    min-height: 400px !important;
-    max-height: 100vh !important;
+    height: 80vh !important;
+    min-height: 50px !important;
+    max-height: 300vh !important;
   }
   .hero-slider .carousel-caption {
     display: flex;
